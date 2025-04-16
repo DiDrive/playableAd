@@ -1,0 +1,45 @@
+{
+  "ver": "1.0.26",
+  "importer": "image",
+  "imported": true,
+  "uuid": "31927e09-5aa6-4a36-af2f-b8ae59163c3b",
+  "files": [
+    ".json",
+    ".png"
+  ],
+  "subMetas": {
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "31927e09-5aa6-4a36-af2f-b8ae59163c3b@6c48a",
+      "displayName": "thingLight",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "31927e09-5aa6-4a36-af2f-b8ae59163c3b",
+        "visible": false
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "hasAlpha": true,
+    "type": "texture",
+    "redirect": "31927e09-5aa6-4a36-af2f-b8ae59163c3b@6c48a",
+    "fixAlphaTransparencyArtifacts": false,
+    "compressSettings": {
+      "useCompressTexture": true
+    }
+  }
+}

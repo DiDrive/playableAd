@@ -1,0 +1,52 @@
+{
+  "package_version": 2,
+  "version": "1.4.0",
+  "name": "smartad",
+  "description": "i18n:smartad.description",
+  "main": "./dist/main.js",
+  "dependencies": {
+    "fs-extra": "^10.0.0",
+    "archiver": "^5.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^16.0.1",
+    "@types/fs-extra": "^9.0.5",
+    "typescript": "^4.3.4"
+  },
+  "panels": {
+    "default": {
+      "title": "smartad Default Panel",
+      "type": "dockable",
+      "main": "dist/panels/default",
+      "size": {
+        "min-width": 400,
+        "min-height": 300,
+        "width": 1024,
+        "height": 600
+      }
+    }
+  },
+  "contributions": {
+    "menu": [
+      {
+        "path": "i18n:menu.panel/smartad",
+        "label": "i18n:smartad.open_panel",
+        "message": "open-panel"
+      }
+    ],
+    "messages": {
+      "open-panel": {
+        "methods": [
+          "openPanel"
+        ]
+      }
+    }
+  },
+  "author": "Cocos Creator",
+  "editor": ">=3.4.2",
+  "scripts": {
+    "build": "tsc -b",
+    "watch": "tsc -w"
+  },
+  "_storeId": "e0369f3a7ec7b21f72eae178c5bb2295"
+}

@@ -1,0 +1,43 @@
+{
+  "__type__": "cc.Material",
+  "_name": "",
+  "_objFlags": 0,
+  "__editorExtras__": {},
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "df1e7fac-e4bb-4b2d-b63b-1e897e07c60f",
+    "__expectedType__": "cc.EffectAsset"
+  },
+  "_techIdx": 0,
+  "_defines": [
+    {}
+  ],
+  "_states": [
+    {
+      "rasterizerState": {},
+      "depthStencilState": {},
+      "blendState": {
+        "targets": [
+          {}
+        ]
+      }
+    }
+  ],
+  "_props": [
+    {
+      "tintColor": {
+        "__type__": "cc.Vec4",
+        "x": -1.1,
+        "y": 0.6,
+        "z": 1,
+        "w": 0.7
+      },
+      "fresnelPower": 0.8,
+      "specularIntensity": 2.2,
+      "crackScale": 6.3,
+      "crackDetail": -0.9,
+      "edgeRoughness": 2.1,
+      "edgeWidth": 1
+    }
+  ]
+}

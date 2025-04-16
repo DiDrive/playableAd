@@ -1,0 +1,45 @@
+{
+  "ver": "1.0.26",
+  "importer": "image",
+  "imported": true,
+  "uuid": "ed706fbc-9075-4c2d-b84d-e2afa5476307",
+  "files": [
+    ".json",
+    ".png"
+  ],
+  "subMetas": {
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "ed706fbc-9075-4c2d-b84d-e2afa5476307@6c48a",
+      "displayName": "loseSmoke01",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "ed706fbc-9075-4c2d-b84d-e2afa5476307",
+        "visible": false
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "hasAlpha": true,
+    "type": "texture",
+    "redirect": "ed706fbc-9075-4c2d-b84d-e2afa5476307@6c48a",
+    "fixAlphaTransparencyArtifacts": false,
+    "compressSettings": {
+      "useCompressTexture": false
+    }
+  }
+}

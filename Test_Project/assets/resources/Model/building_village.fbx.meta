@@ -1,0 +1,354 @@
+{
+  "ver": "2.3.12",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "c4218666-3007-48b9-b0fb-06002cdbcf63",
+  "files": [],
+  "subMetas": {
+    "53398": {
+      "importer": "gltf-material",
+      "uuid": "c4218666-3007-48b9-b0fb-06002cdbcf63@53398",
+      "displayName": "",
+      "id": "53398",
+      "name": "grass.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "938d8": {
+      "importer": "gltf-mesh",
+      "uuid": "c4218666-3007-48b9-b0fb-06002cdbcf63@938d8",
+      "displayName": "",
+      "id": "938d8",
+      "name": "building_village_Material0-0.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 32
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e5e76": {
+      "importer": "gltf-mesh",
+      "uuid": "c4218666-3007-48b9-b0fb-06002cdbcf63@e5e76",
+      "displayName": "",
+      "id": "e5e76",
+      "name": "building_Material0-1.mesh",
+      "userData": {
+        "gltfIndex": 1,
+        "triangleCount": 80
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "ee7cd": {
+      "importer": "gltf-mesh",
+      "uuid": "c4218666-3007-48b9-b0fb-06002cdbcf63@ee7cd",
+      "displayName": "",
+      "id": "ee7cd",
+      "name": "building_Material0-2.mesh",
+      "userData": {
+        "gltfIndex": 2,
+        "triangleCount": 80
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "614aa": {
+      "importer": "gltf-mesh",
+      "uuid": "c4218666-3007-48b9-b0fb-06002cdbcf63@614aa",
+      "displayName": "",
+      "id": "614aa",
+      "name": "chimney-3.mesh",
+      "userData": {
+        "gltfIndex": 3,
+        "triangleCount": 28
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "cea1e": {
+      "importer": "gltf-mesh",
+      "uuid": "c4218666-3007-48b9-b0fb-06002cdbcf63@cea1e",
+      "displayName": "",
+      "id": "cea1e",
+      "name": "fence-4.mesh",
+      "userData": {
+        "gltfIndex": 4,
+        "triangleCount": 32
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "dc496": {
+      "importer": "gltf-mesh",
+      "uuid": "c4218666-3007-48b9-b0fb-06002cdbcf63@dc496",
+      "displayName": "",
+      "id": "dc496",
+      "name": "fence-5.mesh",
+      "userData": {
+        "gltfIndex": 5,
+        "triangleCount": 32
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f0e95": {
+      "importer": "gltf-mesh",
+      "uuid": "c4218666-3007-48b9-b0fb-06002cdbcf63@f0e95",
+      "displayName": "",
+      "id": "f0e95",
+      "name": "Group-6.mesh",
+      "userData": {
+        "gltfIndex": 6,
+        "triangleCount": 16
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "6205f": {
+      "importer": "gltf-mesh",
+      "uuid": "c4218666-3007-48b9-b0fb-06002cdbcf63@6205f",
+      "displayName": "",
+      "id": "6205f",
+      "name": "Group-7.mesh",
+      "userData": {
+        "gltfIndex": 7,
+        "triangleCount": 16
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "79e64": {
+      "importer": "gltf-mesh",
+      "uuid": "c4218666-3007-48b9-b0fb-06002cdbcf63@79e64",
+      "displayName": "",
+      "id": "79e64",
+      "name": "tree_Material0-8.mesh",
+      "userData": {
+        "gltfIndex": 8,
+        "triangleCount": 44
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "71eab": {
+      "importer": "gltf-mesh",
+      "uuid": "c4218666-3007-48b9-b0fb-06002cdbcf63@71eab",
+      "displayName": "",
+      "id": "71eab",
+      "name": "tree_Material0-9.mesh",
+      "userData": {
+        "gltfIndex": 9,
+        "triangleCount": 44
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "3577b": {
+      "importer": "gltf-material",
+      "uuid": "c4218666-3007-48b9-b0fb-06002cdbcf63@3577b",
+      "displayName": "",
+      "id": "3577b",
+      "name": "dirt.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "accad": {
+      "importer": "gltf-material",
+      "uuid": "c4218666-3007-48b9-b0fb-06002cdbcf63@accad",
+      "displayName": "",
+      "id": "accad",
+      "name": "roof.material",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e4014": {
+      "importer": "gltf-material",
+      "uuid": "c4218666-3007-48b9-b0fb-06002cdbcf63@e4014",
+      "displayName": "",
+      "id": "e4014",
+      "name": "wood.material",
+      "userData": {
+        "gltfIndex": 3
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "4de10": {
+      "importer": "gltf-material",
+      "uuid": "c4218666-3007-48b9-b0fb-06002cdbcf63@4de10",
+      "displayName": "",
+      "id": "4de10",
+      "name": "stone.material",
+      "userData": {
+        "gltfIndex": 4
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "feb1e": {
+      "importer": "gltf-material",
+      "uuid": "c4218666-3007-48b9-b0fb-06002cdbcf63@feb1e",
+      "displayName": "",
+      "id": "feb1e",
+      "name": "foliage.material",
+      "userData": {
+        "gltfIndex": 5
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "6968c": {
+      "importer": "gltf-scene",
+      "uuid": "c4218666-3007-48b9-b0fb-06002cdbcf63@6968c",
+      "displayName": "",
+      "id": "6968c",
+      "name": "building_village.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true,
+      "matchMeshNames": false
+    },
+    "redirect": "c4218666-3007-48b9-b0fb-06002cdbcf63@6968c",
+    "assetFinder": {
+      "meshes": [
+        "c4218666-3007-48b9-b0fb-06002cdbcf63@938d8",
+        "c4218666-3007-48b9-b0fb-06002cdbcf63@e5e76",
+        "c4218666-3007-48b9-b0fb-06002cdbcf63@ee7cd",
+        "c4218666-3007-48b9-b0fb-06002cdbcf63@614aa",
+        "c4218666-3007-48b9-b0fb-06002cdbcf63@cea1e",
+        "c4218666-3007-48b9-b0fb-06002cdbcf63@dc496",
+        "c4218666-3007-48b9-b0fb-06002cdbcf63@f0e95",
+        "c4218666-3007-48b9-b0fb-06002cdbcf63@6205f",
+        "c4218666-3007-48b9-b0fb-06002cdbcf63@79e64",
+        "c4218666-3007-48b9-b0fb-06002cdbcf63@71eab"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [
+        "c4218666-3007-48b9-b0fb-06002cdbcf63@3577b",
+        "c4218666-3007-48b9-b0fb-06002cdbcf63@53398",
+        "c4218666-3007-48b9-b0fb-06002cdbcf63@accad",
+        "c4218666-3007-48b9-b0fb-06002cdbcf63@e4014",
+        "c4218666-3007-48b9-b0fb-06002cdbcf63@4de10",
+        "c4218666-3007-48b9-b0fb-06002cdbcf63@feb1e"
+      ],
+      "scenes": [
+        "c4218666-3007-48b9-b0fb-06002cdbcf63@6968c"
+      ]
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
+  }
+}

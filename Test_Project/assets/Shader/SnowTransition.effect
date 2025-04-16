@@ -1,0 +1,85 @@
+CCEffect %{
+  techniques:
+  - passes:
+    - vert: unlit-vs:vert
+      frag: unlit-fs:frag
+      properties:
+        mainTexture:    { value: white }
+        snowTexture:    { value: white }
+        homePosition:   { value: [0, 0, 0, 0] }
+        radius:         { value: 5.0 }
+        softness:       { value: 2.0 }
+        noiseScale:     { value: 0.3 }
+        noiseStrength:  { value: 1.0 }
+}%
+
+CCProgram unlit-vs %{
+  precision highp float;
+  #include <builtin/uniforms/cc-global>
+  #include <builtin/uniforms/cc-local>
+  
+  in vec3 a_position;
+  in vec2 a_uv0;
+  
+  out vec2 v_uv0;
+  out vec3 v_worldPos;
+  
+  vec4 vert () {
+    vec4 pos = cc_matWorld * vec4(a_position, 1);
+    v_worldPos = pos.xyz;
+    v_uv0 = a_uv0;
+    return cc_matProj * (cc_matView * pos);
+  }
+}%
+
+CCProgram unlit-fs %{
+  precision highp float;
+  #include <builtin/uniforms/cc-global>
+  
+  in vec2 v_uv0;
+  in vec3 v_worldPos;
+
+  uniform sampler2D mainTexture;
+  uniform sampler2D snowTexture;
+  
+  uniform Uniforms {
+    vec4 homePosition;
+    float radius;
+    float softness;
+    float noiseScale;
+    float noiseStrength;
+  };
+
+  // Perlin 噪声相关函数
+  vec2 random2(vec2 p) {
+    return fract(sin(vec2(dot(p,vec2(127.1,311.7)),dot(p,vec2(269.5,183.3))))*43758.5453);
+  }
+
+  float perlinNoise(vec2 p) {
+    vec2 i = floor(p);
+    vec2 f = fract(p);
+    
+    vec2 u = f * f * (3.0 - 2.0 * f);
+
+    float a = dot(random2(i), f);
+    float b = dot(random2(i + vec2(1.0, 0.0)), f - vec2(1.0, 0.0));
+    float c = dot(random2(i + vec2(0.0, 1.0)), f - vec2(0.0, 1.0));
+    float d = dot(random2(i + vec2(1.0, 1.0)), f - vec2(1.0, 1.0));
+
+    return mix(mix(a, b, u.x), mix(c, d, u.x), u.y);
+  }
+
+  vec4 frag () {
+    vec4 baseColor = texture(mainTexture, v_uv0);
+    vec4 snowColor = texture(snowTexture, v_uv0);
+    
+    // 使用 Perlin 噪声
+    float noise = perlinNoise(v_worldPos.xz * noiseScale);
+    
+    float dist = distance(v_worldPos.xz, homePosition.xz);
+    dist += noise * noiseStrength;
+    
+    float t = smoothstep(radius - softness, radius + softness, dist);
+    return mix(baseColor, snowColor, t);
+  }
+}%

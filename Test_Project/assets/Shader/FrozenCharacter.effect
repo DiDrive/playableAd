@@ -1,0 +1,121 @@
+CCEffect %{
+  techniques:
+  - passes:
+    - vert: sprite-vs:vert
+      frag: sprite-fs:frag
+      rasterizerState:
+        cullMode: none
+      properties:
+        skinColor: { value: [1.0, 1.0, 1.0, 1.0], editor: { type: color } }
+        lightColor: { value: [1.0, 1.0, 1.0, 1.0], editor: { type: color } }
+        mainColor: { value: [1.0, 1.0, 1.0, 1.0], editor: { type: color } }
+        pantsColor: { value: [1.0, 1.0, 1.0, 1.0], editor: { type: color } }
+        finsColor: { value: [1.0, 1.0, 1.0, 1.0], editor: { type: color } }
+        hairColor: { value: [1.0, 1.0, 1.0, 1.0], editor: { type: color } }
+        hornsColor: { value: [1.0, 1.0, 1.0, 1.0], editor: { type: color } }
+        faceColor: { value: [1.0, 1.0, 1.0, 1.0], editor: { type: color } }
+        frostTexture: { value: white }
+        frozenIntensity: { value: 0.0, editor: { slide: true, range: [0, 1.0], step: 0.01 } }
+        rimColor: { value: [1.0, 1.0, 1.0, 1.0], editor: { type: color } }
+        iceColor: { value: [0.8, 0.9, 1.0, 1.0], editor: { type: color } }
+        rimPower: { value: 2.0 }
+        noiseScale: { value: 1.0 }
+        materialIndex: { value: 0.0, editor: { type: float } }
+}%
+
+CCProgram sprite-vs %{
+  precision highp float;
+  #include <cc-global>
+  #include <cc-local>
+
+  in vec3 a_position;
+  in vec2 a_texCoord;
+  in vec4 a_color;
+  in vec3 a_normal;
+
+  out vec2 v_uv;
+  out vec4 v_color;
+  out vec3 v_normal;
+  out vec3 v_viewDir;
+
+  vec4 vert () {
+    vec4 pos = vec4(a_position, 1);
+    v_normal = (cc_matWorld * vec4(a_normal, 0.0)).xyz;
+    vec3 worldPos = (cc_matWorld * pos).xyz;
+    v_viewDir = normalize(cc_cameraPos.xyz - worldPos);
+    
+    pos = cc_matViewProj * cc_matWorld * pos;
+    v_uv = a_texCoord;
+    v_color = a_color;
+    return pos;
+  }
+}%
+
+CCProgram sprite-fs %{
+  precision highp float;
+  #include <cc-global>
+
+  in vec2 v_uv;
+  in vec4 v_color;
+  in vec3 v_normal;
+  in vec3 v_viewDir;
+
+  uniform sampler2D frostTexture;
+  
+  uniform Constant {
+    vec4 skinColor;
+    vec4 lightColor;
+    vec4 mainColor;
+    vec4 pantsColor;
+    vec4 finsColor;
+    vec4 hairColor;
+    vec4 hornsColor;
+    vec4 faceColor;
+    vec4 iceColor;
+    vec4 rimColor;
+    float frozenIntensity;
+    float rimPower;
+    float noiseScale;
+    float materialIndex;
+  };
+
+  vec4 getPartColor() {
+    if (materialIndex < 0.5) return skinColor;
+    else if (materialIndex < 1.5) return lightColor;
+    else if (materialIndex < 2.5) return mainColor;
+    else if (materialIndex < 3.5) return pantsColor;
+    else if (materialIndex < 4.5) return finsColor;
+    else if (materialIndex < 5.5) return hairColor;
+    else if (materialIndex < 6.5) return hornsColor;
+    else return faceColor;
+  }
+
+  vec4 frag () {
+    // 获取当前部位的颜色
+    vec4 baseColor = getPartColor();
+    
+    // 计算冰霜效果
+    vec2 noiseUV = v_uv * noiseScale;
+    noiseUV += sin(noiseUV * 10.0 + cc_time.x) * 0.02;
+    vec4 frost = texture(frostTexture, noiseUV);
+    
+    // 计算边缘光
+    float rim = pow(1.0 - max(dot(normalize(v_normal), normalize(v_viewDir)), 0.0), rimPower);
+    rim = smoothstep(0.3, 1.0, rim);
+    
+    // 冰晶图案
+    float pattern = sin(v_uv.x * 40.0) * sin(v_uv.y * 40.0) * 0.1;
+    
+    // 混合颜色和冰冻效果
+    vec3 finalColor = mix(baseColor.rgb, iceColor.rgb, frozenIntensity);
+    finalColor += frost.rgb * 0.2 * frozenIntensity;
+    finalColor += rimColor.rgb * rim * frozenIntensity;
+    finalColor += pattern * frozenIntensity;
+    
+    vec4 o;
+    o.rgb = finalColor;
+    o.a = baseColor.a;
+    
+    return o;
+  }
+}%

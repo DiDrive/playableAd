@@ -1,0 +1,148 @@
+CCEffect %{
+  techniques:
+  - passes:
+    - vert: unlit-vs:vert
+      frag: unlit-fs:frag
+      properties:
+        mainTexture: { value: white }
+        tintColor: { value: [0.85, 0.95, 1.0, 0.8] }
+        fresnelPower: { value: 3.0 }
+        specularIntensity: { value: 1.5 }
+        crackScale: { value: 8.0 }
+        crackDetail: { value: 1.0 }
+        edgeRoughness: { value: 2.0 }
+        edgeThreshold: { value: 0.7 }
+        edgeWidth: { value: 0.1 }
+      blendState:
+        targets:
+        - blend: true
+          blendSrc: src_alpha
+          blendDst: one_minus_src_alpha
+}%
+
+CCProgram unlit-vs %{
+  precision highp float;
+  #include <builtin/uniforms/cc-global>
+  #include <builtin/uniforms/cc-local>
+  
+  in vec3 a_position;
+  in vec3 a_normal;
+  in vec2 a_uv0;
+  
+  out vec2 v_uv0;
+  out vec3 v_normal;
+  out vec3 v_viewDir;
+  out vec3 v_worldPos;
+  
+  vec4 vert () {
+    vec4 worldPos = cc_matWorld * vec4(a_position, 1);
+    v_worldPos = worldPos.xyz;
+    v_normal = normalize((cc_matWorldIT * vec4(a_normal, 0.0)).xyz);
+    v_viewDir = normalize(cc_cameraPos.xyz - worldPos.xyz);
+    v_uv0 = a_uv0;
+    return cc_matProj * (cc_matView * worldPos);
+  }
+}%
+
+CCProgram unlit-fs %{
+  precision highp float;
+  #include <builtin/uniforms/cc-global>
+  
+  in vec2 v_uv0;
+  in vec3 v_normal;
+  in vec3 v_viewDir;
+  in vec3 v_worldPos;
+
+  uniform sampler2D mainTexture;
+  
+  uniform Uniforms {
+    vec4 tintColor;
+    float fresnelPower;
+    float specularIntensity;
+    float crackScale;
+    float crackDetail;
+    float edgeRoughness;
+    float edgeThreshold;
+    float edgeWidth;
+  };
+
+  // 噪声函数
+  float hash31(vec3 p) {
+    float h = dot(p, vec3(127.1, 311.7, 74.7));
+    return fract(sin(h) * 43758.5453123);
+  }
+
+  // 改进的边缘效果
+  float getEdgeFactor(vec3 worldPos, vec3 normal, vec3 viewDir) {
+    // 基础边缘检测
+    float rim = 1.0 - max(dot(normal, viewDir), 0.0);
+    
+    // 生成不规则噪声
+    float noise = hash31(worldPos * edgeRoughness);
+    
+    // 创建锯齿状边缘
+    float edgeNoise = step(edgeThreshold + noise * edgeWidth, rim);
+    
+    // 平滑过渡
+    return smoothstep(0.0, 0.5, edgeNoise);
+  }
+
+  // 锐利的裂纹线
+  float crackLine(vec3 p) {
+    p *= crackScale;
+    vec3 ip = floor(p);
+    vec3 fp = fract(p);
+    
+    float d = 1.0;
+    for(int i = -1; i <= 1; i++) {
+      for(int j = -1; j <= 1; j++) {
+        for(int k = -1; k <= 1; k++) {
+          vec3 o = vec3(float(i), float(j), float(k));
+          vec3 r = o - fp + (hash31(ip + o) * 2.0 - 1.0);
+          float d2 = max(abs(r.x), max(abs(r.y), abs(r.z)));
+          d = min(d, d2);
+        }
+      }
+    }
+    return smoothstep(0.2, 0.3, d);
+  }
+
+  vec4 frag () {
+    vec3 normal = normalize(v_normal);
+    
+    // 计算不规则边缘
+    float edgeFactor = getEdgeFactor(v_worldPos, normal, v_viewDir);
+    
+    // 生成主要裂纹
+    float crack1 = crackLine(v_worldPos);
+    float crack2 = crackLine(v_worldPos * 2.0 + vec3(100.0));
+    float crack = mix(crack1, crack2, 0.5) * crackDetail;
+    
+    // 菲涅尔效果
+    float fresnel = pow(1.0 - max(dot(normal, v_viewDir), 0.0), fresnelPower);
+    
+    // 高光效果
+    vec3 reflectDir = reflect(-v_viewDir, normal);
+    float spec = pow(max(dot(reflectDir, v_viewDir), 0.0), 64.0) * specularIntensity;
+    
+    // 最终颜色
+    vec4 finalColor = tintColor;
+    
+    // 添加裂纹效果
+    vec3 crackColor = vec3(1.0, 1.0, 1.0) * 0.9;
+    finalColor.rgb = mix(finalColor.rgb, crackColor, crack * 0.5);
+    
+    // 应用不规则边缘
+    finalColor.a *= (1.0 - edgeFactor * 0.8);
+    
+    // 添加高光和反射
+    finalColor.rgb += vec3(spec);
+    finalColor.rgb += vec3(0.3, 0.4, 0.5) * fresnel;
+    
+    // 在裂纹处添加额外的高光
+    float crackHighlight = pow(1.0 - crack, 4.0) * spec;
+    finalColor.rgb += vec3(crackHighlight) * 0.5;
+    
+    return finalColor;
+  }
+}%

@@ -1,0 +1,1234 @@
+{
+  "ver": "2.3.12",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "e7ef90b3-268d-4bca-8d18-e13f41357d46",
+  "files": [
+    "__original-animation-0.cconb",
+    "__original-animation-1.cconb",
+    "__original-animation-10.cconb",
+    "__original-animation-11.cconb",
+    "__original-animation-12.cconb",
+    "__original-animation-13.cconb",
+    "__original-animation-14.cconb",
+    "__original-animation-15.cconb",
+    "__original-animation-16.cconb",
+    "__original-animation-2.cconb",
+    "__original-animation-3.cconb",
+    "__original-animation-4.cconb",
+    "__original-animation-5.cconb",
+    "__original-animation-6.cconb",
+    "__original-animation-7.cconb",
+    "__original-animation-8.cconb",
+    "__original-animation-9.cconb"
+  ],
+  "subMetas": {
+    "67892": {
+      "importer": "gltf-animation",
+      "uuid": "e7ef90b3-268d-4bca-8d18-e13f41357d46@67892",
+      "displayName": "",
+      "id": "67892",
+      "name": "CharacterArmature|StandUp.animation",
+      "userData": {
+        "gltfIndex": 12,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 1.2916666269302368
+        },
+        "events": []
+      },
+      "ver": "1.0.17",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "90547": {
+      "importer": "gltf-animation",
+      "uuid": "e7ef90b3-268d-4bca-8d18-e13f41357d46@90547",
+      "displayName": "",
+      "id": "90547",
+      "name": "CharacterArmature|PickUp.animation",
+      "userData": {
+        "gltfIndex": 4,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 1.25
+        },
+        "events": []
+      },
+      "ver": "1.0.17",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "94811": {
+      "importer": "gltf-animation",
+      "uuid": "e7ef90b3-268d-4bca-8d18-e13f41357d46@94811",
+      "displayName": "",
+      "id": "94811",
+      "name": "CharacterArmature|Idle.animation",
+      "userData": {
+        "gltfIndex": 2,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 4.166666507720947
+        },
+        "events": []
+      },
+      "ver": "1.0.17",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "fd4a2": {
+      "importer": "gltf-mesh",
+      "uuid": "e7ef90b3-268d-4bca-8d18-e13f41357d46@fd4a2",
+      "displayName": "",
+      "id": "fd4a2",
+      "name": "Cube.004.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 6494
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "02b1c": {
+      "importer": "gltf-animation",
+      "uuid": "e7ef90b3-268d-4bca-8d18-e13f41357d46@02b1c",
+      "displayName": "",
+      "id": "02b1c",
+      "name": "CharacterArmature|Death.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 2.2916667461395264
+        },
+        "events": []
+      },
+      "ver": "1.0.17",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "e4881": {
+      "importer": "gltf-animation",
+      "uuid": "e7ef90b3-268d-4bca-8d18-e13f41357d46@e4881",
+      "displayName": "",
+      "id": "e4881",
+      "name": "CharacterArmature|Defeat.animation",
+      "userData": {
+        "gltfIndex": 1,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 2.5
+        },
+        "events": []
+      },
+      "ver": "1.0.17",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "a87fb": {
+      "importer": "gltf-animation",
+      "uuid": "e7ef90b3-268d-4bca-8d18-e13f41357d46@a87fb",
+      "displayName": "",
+      "id": "a87fb",
+      "name": "CharacterArmature|Jump.animation",
+      "userData": {
+        "gltfIndex": 3,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 1.0416666269302368
+        },
+        "events": []
+      },
+      "ver": "1.0.17",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "055a1": {
+      "importer": "gltf-animation",
+      "uuid": "e7ef90b3-268d-4bca-8d18-e13f41357d46@055a1",
+      "displayName": "",
+      "id": "055a1",
+      "name": "CharacterArmature|Punch.animation",
+      "userData": {
+        "gltfIndex": 5,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 0.75
+        },
+        "events": []
+      },
+      "ver": "1.0.17",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "7d1cc": {
+      "importer": "gltf-animation",
+      "uuid": "e7ef90b3-268d-4bca-8d18-e13f41357d46@7d1cc",
+      "displayName": "",
+      "id": "7d1cc",
+      "name": "CharacterArmature|RecieveHit.animation",
+      "userData": {
+        "gltfIndex": 6,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 0.625
+        },
+        "events": []
+      },
+      "ver": "1.0.17",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "2ce7d": {
+      "importer": "gltf-animation",
+      "uuid": "e7ef90b3-268d-4bca-8d18-e13f41357d46@2ce7d",
+      "displayName": "",
+      "id": "2ce7d",
+      "name": "CharacterArmature|Roll.animation",
+      "userData": {
+        "gltfIndex": 7,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 0.9166666865348816
+        },
+        "events": []
+      },
+      "ver": "1.0.17",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "fab8f": {
+      "importer": "gltf-animation",
+      "uuid": "e7ef90b3-268d-4bca-8d18-e13f41357d46@fab8f",
+      "displayName": "",
+      "id": "fab8f",
+      "name": "CharacterArmature|Run.animation",
+      "userData": {
+        "gltfIndex": 8,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 0.875
+        },
+        "events": []
+      },
+      "ver": "1.0.17",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "44af7": {
+      "importer": "gltf-animation",
+      "uuid": "e7ef90b3-268d-4bca-8d18-e13f41357d46@44af7",
+      "displayName": "",
+      "id": "44af7",
+      "name": "CharacterArmature|Run_Carry.animation",
+      "userData": {
+        "gltfIndex": 9,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 0.875
+        },
+        "events": []
+      },
+      "ver": "1.0.17",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "07af5": {
+      "importer": "gltf-animation",
+      "uuid": "e7ef90b3-268d-4bca-8d18-e13f41357d46@07af5",
+      "displayName": "",
+      "id": "07af5",
+      "name": "CharacterArmature|Shoot_OneHanded.animation",
+      "userData": {
+        "gltfIndex": 10,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 0.5416666865348816
+        },
+        "events": []
+      },
+      "ver": "1.0.17",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "b4cf7": {
+      "importer": "gltf-animation",
+      "uuid": "e7ef90b3-268d-4bca-8d18-e13f41357d46@b4cf7",
+      "displayName": "",
+      "id": "b4cf7",
+      "name": "CharacterArmature|SitDown.animation",
+      "userData": {
+        "gltfIndex": 11,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 0.9583333134651184
+        },
+        "events": []
+      },
+      "ver": "1.0.17",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "cc2e9": {
+      "importer": "gltf-animation",
+      "uuid": "e7ef90b3-268d-4bca-8d18-e13f41357d46@cc2e9",
+      "displayName": "",
+      "id": "cc2e9",
+      "name": "CharacterArmature|SwordSlash.animation",
+      "userData": {
+        "gltfIndex": 13,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 1.0416666269302368
+        },
+        "events": []
+      },
+      "ver": "1.0.17",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "edb23": {
+      "importer": "gltf-animation",
+      "uuid": "e7ef90b3-268d-4bca-8d18-e13f41357d46@edb23",
+      "displayName": "",
+      "id": "edb23",
+      "name": "CharacterArmature|Victory.animation",
+      "userData": {
+        "gltfIndex": 14,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 1.875
+        },
+        "events": []
+      },
+      "ver": "1.0.17",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "cdd36": {
+      "importer": "gltf-animation",
+      "uuid": "e7ef90b3-268d-4bca-8d18-e13f41357d46@cdd36",
+      "displayName": "",
+      "id": "cdd36",
+      "name": "CharacterArmature|Walk.animation",
+      "userData": {
+        "gltfIndex": 15,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 1.25
+        },
+        "events": []
+      },
+      "ver": "1.0.17",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "837c1": {
+      "importer": "gltf-animation",
+      "uuid": "e7ef90b3-268d-4bca-8d18-e13f41357d46@837c1",
+      "displayName": "",
+      "id": "837c1",
+      "name": "CharacterArmature|Walk_Carry.animation",
+      "userData": {
+        "gltfIndex": 16,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 1.25
+        },
+        "events": []
+      },
+      "ver": "1.0.17",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "438fe": {
+      "importer": "gltf-skeleton",
+      "uuid": "e7ef90b3-268d-4bca-8d18-e13f41357d46@438fe",
+      "displayName": "",
+      "id": "438fe",
+      "name": "UnnamedSkeleton.skeleton",
+      "userData": {
+        "gltfIndex": 0,
+        "jointsLength": 23
+      },
+      "ver": "1.0.1",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0b4b1": {
+      "importer": "gltf-material",
+      "uuid": "e7ef90b3-268d-4bca-8d18-e13f41357d46@0b4b1",
+      "displayName": "",
+      "id": "0b4b1",
+      "name": "Skin.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "b3b37": {
+      "importer": "gltf-material",
+      "uuid": "e7ef90b3-268d-4bca-8d18-e13f41357d46@b3b37",
+      "displayName": "",
+      "id": "b3b37",
+      "name": "Light.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "925cb": {
+      "importer": "gltf-material",
+      "uuid": "e7ef90b3-268d-4bca-8d18-e13f41357d46@925cb",
+      "displayName": "",
+      "id": "925cb",
+      "name": "Main.material",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e92a3": {
+      "importer": "gltf-material",
+      "uuid": "e7ef90b3-268d-4bca-8d18-e13f41357d46@e92a3",
+      "displayName": "",
+      "id": "e92a3",
+      "name": "Pants.material",
+      "userData": {
+        "gltfIndex": 3
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "312bf": {
+      "importer": "gltf-material",
+      "uuid": "e7ef90b3-268d-4bca-8d18-e13f41357d46@312bf",
+      "displayName": "",
+      "id": "312bf",
+      "name": "Hair.material",
+      "userData": {
+        "gltfIndex": 4
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c2dfa": {
+      "importer": "gltf-material",
+      "uuid": "e7ef90b3-268d-4bca-8d18-e13f41357d46@c2dfa",
+      "displayName": "",
+      "id": "c2dfa",
+      "name": "Helmet.material",
+      "userData": {
+        "gltfIndex": 5
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "4d361": {
+      "importer": "gltf-material",
+      "uuid": "e7ef90b3-268d-4bca-8d18-e13f41357d46@4d361",
+      "displayName": "",
+      "id": "4d361",
+      "name": "Horns.material",
+      "userData": {
+        "gltfIndex": 6
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "33f5e": {
+      "importer": "gltf-material",
+      "uuid": "e7ef90b3-268d-4bca-8d18-e13f41357d46@33f5e",
+      "displayName": "",
+      "id": "33f5e",
+      "name": "Face.material",
+      "userData": {
+        "gltfIndex": 7
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "a5cef": {
+      "importer": "gltf-scene",
+      "uuid": "e7ef90b3-268d-4bca-8d18-e13f41357d46@a5cef",
+      "displayName": "",
+      "id": "a5cef",
+      "name": "VikingHelmet.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "animationImportSettings": [
+      {
+        "name": "CharacterArmature|Death",
+        "duration": 2.2916667461395264,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "CharacterArmature|Death",
+            "from": 0,
+            "to": 2.2916667461395264,
+            "wrapMode": 2,
+            "previousId": "02b1c"
+          }
+        ]
+      },
+      {
+        "name": "CharacterArmature|Defeat",
+        "duration": 2.5,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "CharacterArmature|Defeat",
+            "from": 0,
+            "to": 2.5,
+            "wrapMode": 2,
+            "previousId": "e4881"
+          }
+        ]
+      },
+      {
+        "name": "CharacterArmature|Idle",
+        "duration": 4.166666507720947,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "CharacterArmature|Idle",
+            "from": 0,
+            "to": 4.166666507720947,
+            "wrapMode": 2,
+            "previousId": "94811"
+          }
+        ]
+      },
+      {
+        "name": "CharacterArmature|Jump",
+        "duration": 1.0416666269302368,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "CharacterArmature|Jump",
+            "from": 0,
+            "to": 1.0416666269302368,
+            "wrapMode": 2,
+            "previousId": "a87fb"
+          }
+        ]
+      },
+      {
+        "name": "CharacterArmature|PickUp",
+        "duration": 1.25,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "CharacterArmature|PickUp",
+            "from": 0,
+            "to": 1.25,
+            "wrapMode": 2,
+            "previousId": "90547"
+          }
+        ]
+      },
+      {
+        "name": "CharacterArmature|Punch",
+        "duration": 0.75,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "CharacterArmature|Punch",
+            "from": 0,
+            "to": 0.75,
+            "wrapMode": 2,
+            "previousId": "055a1"
+          }
+        ]
+      },
+      {
+        "name": "CharacterArmature|RecieveHit",
+        "duration": 0.625,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "CharacterArmature|RecieveHit",
+            "from": 0,
+            "to": 0.625,
+            "wrapMode": 2,
+            "previousId": "7d1cc"
+          }
+        ]
+      },
+      {
+        "name": "CharacterArmature|Roll",
+        "duration": 0.9166666865348816,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "CharacterArmature|Roll",
+            "from": 0,
+            "to": 0.9166666865348816,
+            "wrapMode": 2,
+            "previousId": "2ce7d"
+          }
+        ]
+      },
+      {
+        "name": "CharacterArmature|Run",
+        "duration": 0.875,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "CharacterArmature|Run",
+            "from": 0,
+            "to": 0.875,
+            "wrapMode": 2,
+            "previousId": "fab8f"
+          }
+        ]
+      },
+      {
+        "name": "CharacterArmature|Run_Carry",
+        "duration": 0.875,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "CharacterArmature|Run_Carry",
+            "from": 0,
+            "to": 0.875,
+            "wrapMode": 2,
+            "previousId": "44af7"
+          }
+        ]
+      },
+      {
+        "name": "CharacterArmature|Shoot_OneHanded",
+        "duration": 0.5416666865348816,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "CharacterArmature|Shoot_OneHanded",
+            "from": 0,
+            "to": 0.5416666865348816,
+            "wrapMode": 2,
+            "previousId": "07af5"
+          }
+        ]
+      },
+      {
+        "name": "CharacterArmature|SitDown",
+        "duration": 0.9583333134651184,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "CharacterArmature|SitDown",
+            "from": 0,
+            "to": 0.9583333134651184,
+            "wrapMode": 2,
+            "previousId": "b4cf7"
+          }
+        ]
+      },
+      {
+        "name": "CharacterArmature|StandUp",
+        "duration": 1.2916666269302368,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "CharacterArmature|StandUp",
+            "from": 0,
+            "to": 1.2916666269302368,
+            "wrapMode": 2,
+            "previousId": "67892"
+          }
+        ]
+      },
+      {
+        "name": "CharacterArmature|SwordSlash",
+        "duration": 1.0416666269302368,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "CharacterArmature|SwordSlash",
+            "from": 0,
+            "to": 1.0416666269302368,
+            "wrapMode": 2,
+            "previousId": "cc2e9"
+          }
+        ]
+      },
+      {
+        "name": "CharacterArmature|Victory",
+        "duration": 1.875,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "CharacterArmature|Victory",
+            "from": 0,
+            "to": 1.875,
+            "wrapMode": 2,
+            "previousId": "edb23"
+          }
+        ]
+      },
+      {
+        "name": "CharacterArmature|Walk",
+        "duration": 1.25,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "CharacterArmature|Walk",
+            "from": 0,
+            "to": 1.25,
+            "wrapMode": 2,
+            "previousId": "cdd36"
+          }
+        ]
+      },
+      {
+        "name": "CharacterArmature|Walk_Carry",
+        "duration": 1.25,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "CharacterArmature|Walk_Carry",
+            "from": 0,
+            "to": 1.25,
+            "wrapMode": 2,
+            "previousId": "837c1"
+          }
+        ]
+      }
+    ],
+    "redirect": "e7ef90b3-268d-4bca-8d18-e13f41357d46@a5cef",
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "e7ef90b3-268d-4bca-8d18-e13f41357d46@fd4a2"
+      ],
+      "skeletons": [
+        "e7ef90b3-268d-4bca-8d18-e13f41357d46@438fe"
+      ],
+      "textures": [],
+      "materials": [
+        "e7ef90b3-268d-4bca-8d18-e13f41357d46@0b4b1",
+        "e7ef90b3-268d-4bca-8d18-e13f41357d46@b3b37",
+        "e7ef90b3-268d-4bca-8d18-e13f41357d46@925cb",
+        "e7ef90b3-268d-4bca-8d18-e13f41357d46@e92a3",
+        "e7ef90b3-268d-4bca-8d18-e13f41357d46@312bf",
+        "e7ef90b3-268d-4bca-8d18-e13f41357d46@c2dfa",
+        "e7ef90b3-268d-4bca-8d18-e13f41357d46@4d361",
+        "e7ef90b3-268d-4bca-8d18-e13f41357d46@33f5e"
+      ],
+      "scenes": [
+        "e7ef90b3-268d-4bca-8d18-e13f41357d46@a5cef"
+      ]
+    },
+    "meshOptimize": {
+      "enable": true,
+      "vertexCache": true,
+      "overdraw": true,
+      "vertexFetch": true
+    },
+    "meshCompress": {
+      "enable": true,
+      "encode": true,
+      "compress": true,
+      "quantize": true
+    },
+    "materials": {
+      "e7ef90b3-268d-4bca-8d18-e13f41357d46@925cb": {
+        "__type__": "cc.Material",
+        "_name": "",
+        "_objFlags": 0,
+        "__editorExtras__": {},
+        "_native": "",
+        "_effectAsset": {
+          "__uuid__": "f648964e-8d32-41fc-9ac9-7a1e714dd17b",
+          "__expectedType__": "cc.EffectAsset"
+        },
+        "_techIdx": 0,
+        "_defines": [
+          {
+            "DCC_APP_NAME": 2,
+            "HAS_EXPORTED_METALLIC": true
+          },
+          {},
+          {},
+          {}
+        ],
+        "_states": [
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          },
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          },
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          },
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          }
+        ],
+        "_props": [
+          {
+            "mainColor": {
+              "__type__": "cc.Color",
+              "r": 224,
+              "g": 81,
+              "b": 25,
+              "a": 255
+            },
+            "emissive": {
+              "__type__": "cc.Color",
+              "r": 68,
+              "g": 46,
+              "b": 41,
+              "a": 255
+            },
+            "emissiveScale": 0,
+            "shininessExponent": 9.607843137254903,
+            "specularFactor": 0.25,
+            "transparencyFactor": 0
+          },
+          {},
+          {},
+          {}
+        ]
+      },
+      "e7ef90b3-268d-4bca-8d18-e13f41357d46@0b4b1": {
+        "__type__": "cc.Material",
+        "_name": "",
+        "_objFlags": 0,
+        "__editorExtras__": {},
+        "_native": "",
+        "_effectAsset": {
+          "__uuid__": "f648964e-8d32-41fc-9ac9-7a1e714dd17b",
+          "__expectedType__": "cc.EffectAsset"
+        },
+        "_techIdx": 0,
+        "_defines": [
+          {
+            "DCC_APP_NAME": 2,
+            "HAS_EXPORTED_METALLIC": true
+          },
+          {},
+          {},
+          {}
+        ],
+        "_states": [
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          },
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          },
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          },
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          }
+        ],
+        "_props": [
+          {
+            "mainColor": {
+              "__type__": "cc.Color",
+              "r": 214,
+              "g": 180,
+              "b": 130,
+              "a": 255
+            },
+            "emissive": {
+              "__type__": "cc.Color",
+              "r": 31,
+              "g": 31,
+              "b": 31,
+              "a": 255
+            },
+            "emissiveScale": 0,
+            "shininessExponent": 9.607843137254903,
+            "specularFactor": 0.25,
+            "transparencyFactor": 0
+          },
+          {},
+          {},
+          {}
+        ]
+      },
+      "e7ef90b3-268d-4bca-8d18-e13f41357d46@312bf": {
+        "__type__": "cc.Material",
+        "_name": "",
+        "_objFlags": 0,
+        "__editorExtras__": {},
+        "_native": "",
+        "_effectAsset": {
+          "__uuid__": "f648964e-8d32-41fc-9ac9-7a1e714dd17b",
+          "__expectedType__": "cc.EffectAsset"
+        },
+        "_techIdx": 0,
+        "_defines": [
+          {
+            "DCC_APP_NAME": 2,
+            "HAS_EXPORTED_METALLIC": true
+          },
+          {},
+          {},
+          {}
+        ],
+        "_states": [
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          },
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          },
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          },
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          }
+        ],
+        "_props": [
+          {
+            "mainColor": {
+              "__type__": "cc.Color",
+              "r": 202,
+              "g": 158,
+              "b": 43,
+              "a": 255
+            },
+            "emissive": {
+              "__type__": "cc.Color",
+              "r": 107,
+              "g": 53,
+              "b": 33,
+              "a": 255
+            },
+            "emissiveScale": 0,
+            "shininessExponent": 9.607843137254903,
+            "specularFactor": 0.25,
+            "transparencyFactor": 0
+          },
+          {},
+          {},
+          {}
+        ]
+      },
+      "e7ef90b3-268d-4bca-8d18-e13f41357d46@b3b37": {
+        "__type__": "cc.Material",
+        "_name": "",
+        "_objFlags": 0,
+        "__editorExtras__": {},
+        "_native": "",
+        "_effectAsset": {
+          "__uuid__": "f648964e-8d32-41fc-9ac9-7a1e714dd17b",
+          "__expectedType__": "cc.EffectAsset"
+        },
+        "_techIdx": 0,
+        "_defines": [
+          {
+            "DCC_APP_NAME": 2,
+            "HAS_EXPORTED_METALLIC": true
+          },
+          {},
+          {},
+          {}
+        ],
+        "_states": [
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          },
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          },
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          },
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          }
+        ],
+        "_props": [
+          {
+            "mainColor": {
+              "__type__": "cc.Color",
+              "r": 100,
+              "g": 60,
+              "b": 15,
+              "a": 255
+            },
+            "emissive": {
+              "__type__": "cc.Color",
+              "r": 194,
+              "g": 171,
+              "b": 145,
+              "a": 255
+            },
+            "emissiveScale": 0,
+            "shininessExponent": 9.607843137254903,
+            "specularFactor": 0.25,
+            "transparencyFactor": 0
+          },
+          {},
+          {},
+          {}
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+#app {
+    padding:20px;
+    color: #fff;
+}
+a {
+    color:#fff;
+    margin: 5px;
+}
+h2 {
+    color: #fff;
+    text-align: center;
+}
+p {
+    font-size: 16px;
+}
+
+.btn_group {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button-item {
+    padding:10px 20px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+#msg {
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 20px;
+    line-height: 24px;
+    border-radius: 5px;
+    word-break: break-all;
+    background: #000;
+}

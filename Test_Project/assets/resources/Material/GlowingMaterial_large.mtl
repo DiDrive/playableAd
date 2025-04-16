@@ -1,0 +1,52 @@
+{
+  "__type__": "cc.Material",
+  "_name": "",
+  "_objFlags": 0,
+  "__editorExtras__": {},
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "113ecf35-9757-46dc-b496-2312f335e6ad",
+    "__expectedType__": "cc.EffectAsset"
+  },
+  "_techIdx": 0,
+  "_defines": [
+    {}
+  ],
+  "_states": [
+    {
+      "rasterizerState": {},
+      "depthStencilState": {},
+      "blendState": {
+        "targets": [
+          {}
+        ]
+      }
+    }
+  ],
+  "_props": [
+    {
+      "tintColor": {
+        "__type__": "cc.Color",
+        "r": 13,
+        "g": 99,
+        "b": 209,
+        "a": 204
+      },
+      "fresnelPower": 2.9,
+      "specularIntensity": 0.6,
+      "crackScale": 6.3,
+      "crackDetail": -0.9,
+      "edgeRoughness": 2.1,
+      "edgeWidth": 1,
+      "glowColor": {
+        "__type__": "cc.Color",
+        "r": 155,
+        "g": 158,
+        "b": 79,
+        "a": 255
+      },
+      "glowSpeed": 3,
+      "glowIntensity": 1
+    }
+  ]
+}

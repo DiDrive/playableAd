@@ -1,0 +1,236 @@
+// Effect Syntax Guide: https://docs.cocos.com/creator/manual/zh/shader/index.html
+
+CCEffect %{
+  techniques:
+  - name: opaque
+    passes:
+    - vert: standard-vs
+      frag: standard-fs
+      properties: &props
+        mainTexture:    { value: grey, target: albedoMap, editor: { displayName: AlbedoMap } }
+        mainColor:      { value: [0.15, 0.15, 0.15, 1.0], target: albedo, linear: true, editor: { displayName: Albedo, type: color } }
+        albedoScale:    { value: [1.0, 1.0, 1.0], target: albedoScaleAndCutoff.xyz }
+        alphaThreshold: { value: 0.5, target: albedoScaleAndCutoff.w, editor: { parent: USE_ALPHA_TEST, slide: true, range: [0, 1.0], step: 0.001 } }
+        roughness:      { value: 0.95, target: pbrParams.y, editor: { slide: true, range: [0, 1.0], step: 0.001 } }
+        metallic:       { value: 0.05, target: pbrParams.z, editor: { slide: true, range: [0, 1.0], step: 0.001 } }
+        noiseScale:     { value: 20.0, target: pbrParams.x, editor: { slide: true, range: [0, 50.0], step: 0.1 } }
+        noiseStrength:  { value: 0.15, target: pbrParams.w, editor: { slide: true, range: [0, 1.0], step: 0.001 } }
+    - &forward-add
+      vert: standard-vs
+      frag: standard-fs
+      phase: forward-add
+      propertyIndex: 0
+      embeddedMacros: { CC_FORWARD_ADD: true }
+      depthStencilState:
+        depthFunc: equal
+        depthTest: true
+        depthWrite: false
+      blendState:
+        targets:
+        - blend: true
+          blendSrc: one
+          blendDst: one
+          blendSrcAlpha: zero
+          blendDstAlpha: one
+    - &shadow-caster
+      vert: shadow-caster-vs
+      frag: shadow-caster-fs
+      phase: shadow-caster
+      propertyIndex: 0
+      rasterizerState:
+        cullMode: front
+      properties:
+        mainColor:      { value: [0.15, 0.15, 0.15, 1.0], target: albedo, editor: { displayName: Albedo, type: color } }
+        albedoScale:    { value: [1.0, 1.0, 1.0], target: albedoScaleAndCutoff.xyz }
+        alphaThreshold: { value: 0.5, target: albedoScaleAndCutoff.w, editor: { parent: USE_ALPHA_TEST } }
+        mainTexture:    { value: grey, target: albedoMap, editor: { displayName: AlbedoMap } }
+  - name: transparent
+    passes:
+    - vert: standard-vs
+      frag: standard-fs
+      embeddedMacros: { CC_FORCE_FORWARD_SHADING: true }
+      depthStencilState:
+        depthTest: true
+        depthWrite: false
+      blendState:
+        targets:
+        - blend: true
+          blendSrc: src_alpha
+          blendDst: one_minus_src_alpha
+          blendDstAlpha: one_minus_src_alpha
+      properties: *props
+    - *forward-add
+    - *shadow-caster
+}%
+
+
+CCProgram shared-ubos %{
+  uniform Constants {
+    vec4 albedo;
+    vec4 albedoScaleAndCutoff;
+    vec4 pbrParams;
+  };
+}%
+
+CCProgram macro-remapping %{
+  // ui displayed macros
+  #pragma define-meta USE_TWOSIDE
+  #pragma define-meta USE_VERTEX_COLOR
+
+  #define CC_SURFACES_USE_TWO_SIDED USE_TWOSIDE
+  #define CC_SURFACES_USE_VERTEX_COLOR USE_VERTEX_COLOR
+}%
+CCProgram surface-vertex %{
+  #define CC_SURFACES_VERTEX_MODIFY_WORLD_POS
+  vec3 SurfacesVertexModifyWorldPos(in SurfacesStandardVertexIntermediate In)
+  {
+    return In.worldPos;
+  }
+  
+  #define CC_SURFACES_VERTEX_MODIFY_WORLD_NORMAL
+  vec3 SurfacesVertexModifyWorldNormal(in SurfacesStandardVertexIntermediate In)
+  {
+    return In.worldNormal.xyz;
+  }
+  
+  #define CC_SURFACES_VERTEX_MODIFY_UV
+  void SurfacesVertexModifyUV(inout SurfacesStandardVertexIntermediate In)
+  {
+  }
+}%
+
+
+CCProgram surface-fragment %{
+  #if USE_ALBEDO_MAP
+    uniform sampler2D albedoMap;
+    #pragma define-meta ALBEDO_UV options([v_uv, v_uv1])
+  #endif
+
+  #if USE_ALPHA_TEST
+    #pragma define-meta ALPHA_TEST_CHANNEL options([a, r])
+  #endif
+
+  float hash(vec3 p) {
+    p = fract(p * vec3(0.1031, 0.1030, 0.0973));
+    p += dot(p, p.yzx + 33.33);
+    return fract((p.x + p.y) * p.z);
+  }
+
+  float noise(vec3 p) {
+    vec3 i = floor(p);
+    vec3 f = fract(p);
+    f = f * f * (3.0 - 2.0 * f);
+    
+    float n = mix(
+      mix(
+        mix(hash(i), hash(i + vec3(1,0,0)), f.x),
+        mix(hash(i + vec3(0,1,0)), hash(i + vec3(1,1,0)), f.x),
+        f.y
+      ),
+      mix(
+        mix(hash(i + vec3(0,0,1)), hash(i + vec3(1,0,1)), f.x),
+        mix(hash(i + vec3(0,1,1)), hash(i + vec3(1,1,1)), f.x),
+        f.y
+      ),
+      f.z
+    );
+    return n;
+  }
+
+  #define CC_SURFACES_FRAGMENT_MODIFY_BASECOLOR_AND_TRANSPARENCY
+  vec4 SurfacesFragmentModifyBaseColorAndTransparency()
+  {
+    vec4 baseColor = albedo;
+    
+    // 添加程序化噪声来模拟石头表面的细微变化
+    float n = noise(FSInput_worldPos * pbrParams.x) * pbrParams.w;
+    baseColor.rgb *= (1.0 - n);
+    
+    return baseColor;
+  }
+
+  #define CC_SURFACES_FRAGMENT_MODIFY_PBRPARAMS
+  vec4 SurfacesFragmentModifyPBRParams()
+  {
+    float n = noise(FSInput_worldPos * pbrParams.x * 2.0) * pbrParams.w;
+    float roughness = pbrParams.y + n * 0.1;
+    float metallic = pbrParams.z - n * 0.05;
+    
+    return vec4(1.0, roughness, metallic, 0.5);
+  }
+}%
+
+
+
+
+CCProgram standard-vs %{
+  precision highp float;
+
+  // 1. surface internal macros, for technique usage or remapping some user (material) macros to surface internal macros
+  #include <macro-remapping>
+  #include <surfaces/effect-macros/common-macros>
+
+  // 2. common include with corresponding shader stage, include before surface functions
+  #include <surfaces/includes/common-vs>
+
+  // 3. user surface functions that can use user (effect) parameters (ubo Constants)
+  //    see surfaces/default-functions/xxx.chunk
+  #include <shared-ubos>
+  #include <surface-vertex>
+
+  // 4. surface include with corresponding shader stage and shading-model (optional)
+  #include <surfaces/includes/standard-vs>
+
+  // 5. shader entry with corresponding shader stage and technique usage/type
+  #include <shading-entries/main-functions/render-to-scene/vs>
+}%
+
+
+CCProgram shadow-caster-vs %{
+  precision highp float;
+  #include <surfaces/effect-macros/render-to-shadowmap>
+  #include <surfaces/includes/common-vs>
+  #include <shared-ubos>
+  #include <surface-vertex>
+  #include <shading-entries/main-functions/render-to-shadowmap/vs>
+}%
+
+
+
+CCProgram standard-fs %{
+  // shading-model : standard
+  // lighting-model : standard (isotropy / anisotropy pbr)
+  // shader stage : fs
+  // technique usage/type : render-to-scene
+
+  precision highp float;
+  // 1. surface internal macros, for technique usage or remapping some user (material) macros to surface internal macros
+  #include <macro-remapping>
+  #include <surfaces/effect-macros/common-macros>
+
+  // 2. common include with corresponding shader stage, include before surface functions
+  #include <surfaces/includes/common-fs>
+
+  // 3. user surface functions that can use user (effect) parameters (ubo Constants)
+  //    see surfaces/default-functions/xxx.chunk
+  #include <shared-ubos>
+  #include <surface-fragment>
+
+  // 4. lighting-model (optional)
+  #include <lighting-models/includes/standard>
+
+  // 5. surface include with corresponding shader stage and shading-model (optional)
+  #include <surfaces/includes/standard-fs>
+
+  // 6. shader entry with corresponding shader stage and technique usage/type
+  #include <shading-entries/main-functions/render-to-scene/fs>
+}%
+
+CCProgram shadow-caster-fs %{
+  precision highp float;
+  #include <surfaces/effect-macros/render-to-shadowmap>
+  #include <surfaces/includes/common-fs>
+  #include <shared-ubos>
+  #include <surface-fragment>
+  #include <shading-entries/main-functions/render-to-shadowmap/fs>
+}%
